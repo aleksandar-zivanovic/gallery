@@ -1,6 +1,7 @@
 <?php
-include_once 'functions.php';
-include_once 'config.php';
-include_once 'database.php';
-//include_once 'user.php';
+require_once 'functions.php';
+require_once 'config.php';
+require_once 'database.php';
+require_once 'user.php';
+require_once 'session.php';
 ?>
