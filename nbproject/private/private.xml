@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/gallery/admin/login.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/admin/includes/session.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/database.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/user.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/admin/includes/functions.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/includes/admin_content.php</file>
         </group>
     </open-files>
 </project-private>

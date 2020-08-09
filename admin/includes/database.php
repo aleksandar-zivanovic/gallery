@@ -20,7 +20,7 @@ class Database {
 
     public function query($sql) {
         $result = $this->connection->query($sql)
-                or die("Queri Failed :" . $this->connection->error);
+                or die("Query from query() method failed :" . $this->connection->connect_error);
         return $result;
     }
 
@@ -31,6 +31,7 @@ class Database {
 
     public function the_insert_id() {
         return $this->connection->insert_id;
+//        return mysqli_insert_id($this->connection); Isto je sto i red iznad
     }
 
 }

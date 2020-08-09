@@ -9,30 +9,20 @@
             </h1>
 
             <?php
-//            $result_set = User::find_all_users();
-//            while ($row = mysqli_fetch_array($result_set)) {
-//                echo $row['username'] . "<br>";
-//            }
-//            echo "<hr>";
-//            $found_user = User::find_user_by_id(2);
+//            echo "<hr style='border:1px solid red;'>";
+            
+//            $user = new User();
 //            
-//            $user = User::instantiation($found_user);
-//
-//            echo $user->username;
-//            echo "<br>";
-//            print_r(get_object_vars($user));
-
-            $users = User::find_all_users();
-            foreach ($users as $user) {
-                echo $user->username . "<br>";
-            }
+//            $user->username = "Djole";
+//            $user->password = 123;
+//            $user->first_name = "Djole";
+//            $user->last_name = "Zloba";
+//            
+//            $user->create();
             
-            echo "<hr style='border:1px solid red;'>";
-            
-            $found_user = User::find_user_by_id(3);
-            
-            echo $found_user->username;
-            
+            $user = User::find_user_by_id(8);
+//            $user->last_name = "Zloba";
+            $user->delete();
             
             
             ?>
