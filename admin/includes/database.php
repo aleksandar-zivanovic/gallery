@@ -20,12 +20,20 @@ class Database {
 
     public function query($sql) {
         $result = $this->connection->query($sql)
-                or die("Query from query() method failed :" . $this->connection->connect_error);
-        return $result;
+                /***************************************************/
+                /*                N A P O M E N A                  */
+                /***************************************************/
+                /* mysqli_error VS mysqli_connect_error            */
+                /* - mysqli_error() - greska u QUERY-ju            */
+                /* - mysqli_connect_error() - greska u KONEKCIJI   */
+                /***************************************************/
+                or die("<i>Query from query() method failed:</i> <pre>" . $this->connection->error) ."</pre>";
+            return $result;
     }
 
     public function escape_string($string) {
-        $escaped_string = $this->connection->real_escape_string($string);
+        $trimed_string = trim($string);
+        $escaped_string = $this->connection->real_escape_string($trimed_string);
         return $escaped_string;
     }
 
