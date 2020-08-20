@@ -11,6 +11,12 @@
             <?php
             echo "<hr style='border:1px solid red;'>";
 
+            require_once 'test' . DIRECTORY_SEPARATOR . 'test.php';
+
+            echo "<hr style='border:1px solid red;'>";
+
+
+
 //            $user = new User();
 //            $user->id = 13;
 //            $user->username = "Betmen";
@@ -20,9 +26,7 @@
 //
 //            $user->create();
 //            $user->update();
-//            
-//            
-//            $user = User::find_user_by_id(111);
+//            $user = User::find_by_id(111);
 //            $user->last_name = "Zloba";
 //            $user->delete();
 //            /* pozivanje properties() metoda */
@@ -46,6 +50,29 @@
 //            print_r($korisnik);
 //            echo "</pre>";
 //            /* kraj - INSTANCIRANJE */
+
+
+
+//            $user = User::find_all();
+//            foreach ($user as $key => $value) {
+//                print_r($value);
+//                echo "<br>";
+//            }
+//
+//            echo "<hr>";
+//
+//            $the_photo = Photo::find_all();
+//            foreach ($the_photo as $keyph => $valueph) {
+//                print_r($valueph);
+//                echo "<br>";
+//            }
+
+
+//            $user = new User();
+//            $user->username = "NEW USER";
+//            $user->save();
+
+            echo "<hr style='border:1px solid blue;'>";
             ?>
 
             <ol class="breadcrumb">

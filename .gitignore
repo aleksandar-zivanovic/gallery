@@ -1,1 +1,5 @@
 /admin/TEST_add_user.php
+/admin/includes/test.php
+/admin/includes/test/
+admin/images/
+*.jpg
