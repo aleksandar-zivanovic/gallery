@@ -4,8 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/photo.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/admin/edit_photo.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/add_user.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/includes/user.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/photos.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/users.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/db_object.php</file>
         </group>
     </open-files>

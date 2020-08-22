@@ -16,11 +16,10 @@ if (!isset($_GET['id'])) {
             $photo->title = $_POST['title'];
             $photo->caption = $_POST['caption'];
             $photo->alternate_text = $_POST['alternate_text'];
-            $photo->description = $_POST['description'];
+            $photo->description = trim($_POST['description']);
         }
     }
-    
-    
+
     $photo->save();
 }
 ?>
@@ -55,10 +54,10 @@ if (!isset($_GET['id'])) {
                     <div class="col-md-8">
 
                         <div class="form-group">
-                            <label for="">Title</label>
+                            <label for="title">Title</label>
                             <input type="text" name="title" value="<?php echo $photo->title; ?>" class="form-control">
                         </div>
-                        
+
                         <div class="form-group">
                             <a href="">
                                 <img class="thumbnail center-block admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>">
@@ -66,17 +65,17 @@ if (!isset($_GET['id'])) {
                         </div>
 
                         <div class="form-group">
-                            <label for="">Caption</label>
+                            <label for="caption">Caption</label>
                             <input type="text" name="caption" value="<?php echo $photo->caption; ?>" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="">Alternate text</label>
+                            <label for="alternate_text">Alternate text</label>
                             <input type="text" name="alternate_text" value="<?php echo $photo->alternate_text; ?>" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="">Description</label>
+                            <label for="description">Description</label>
                             <textarea name="description" cols="30" rows="10" class="form-control"><?php echo $photo->description; ?></textarea>
                         </div>
 

@@ -1,5 +1,11 @@
 
 
+/************* Style for user image ont users.php page in the admin area *************/
+.user_image {
+    width: 62px;
+    height: auto;
+}
+
 
 
 /************* Style for photo thumbnails in the admin area *************/
