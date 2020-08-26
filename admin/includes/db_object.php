@@ -39,6 +39,30 @@ class Db_object {
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
 
+    /*     * ********
+     * moje metod find_by_query(). za njega ne trebaju metodi koje je Edwin koristio,
+     * tako da se dobija cistiji i pregledniji kod. Takodje, ovaj kod je vise OOP od njegovog
+
+      //    public static function find_by_query($sql) {
+      //        global $database;
+      //        $this_query = $database->query($sql);
+      //
+      //        $the_object_array = [];
+      //
+      //        while ($row = $this_query->fetch_array(MYSQLI_ASSOC)) {
+      ////      while ($row = $this_query->fetch_assoc()) { // isto kao i prvi red. fetch_array(MYSQLI_ASSOC) = fetch_assoc()
+      //            $objekt = new static;
+      //
+      //            foreach ($row as $key => $value) {
+      //                $objekt->$key = $value;
+      //            }
+      //            $the_object_array[] = $objekt;
+      //        }
+      //
+      //        return $the_object_array;
+      //    }
+     * ******** */
+
     public static function find_by_query($sql) {
         global $database;
         $result_set = $database->query($sql);
@@ -53,14 +77,21 @@ class Db_object {
 
     public static function instantiation($the_record) {
         $calling_class = get_called_class();
-        $the_object = new $calling_class;  // isto se postize i sa: $the_object = new static;
-        /* rucno upisivanje pramatara i vrednosti zamenjeno automatskim (kroz petlju)
-          //        $the_object->id         = $the_record['id'];
-          //        $the_object->username   = $the_record['username'];
-          //        $the_object->password   = $the_record['password'];
-          //        $the_object->first_name = $the_record['first_name'];
-          //        $the_object->last_name  = $the_record['last_name'];
+
+        /* rucno upisivanje pramatara i vrednosti zamenjeno automatskim (kroz foreachpetlju)
+          $the_object = new $calling_class;
+          while ($row = mysqli_fetch_array($this_query)) {
+          $the_object->id = $the_record['id'];
+          $the_object->username = $the_record['username'];
+          $the_object->password = $the_record['password'];
+          $the_object->first_name = $the_record['first_name'];
+          $the_object->last_name = $the_record['last_name'];
+          $the_object_array[] = $the_object;
+          }
+          return $the_object_array;
          */
+
+        $the_object = new $calling_class;  // isto se postize i sa: $the_object = new static;
 
         foreach ($the_record as $the_attribute => $value) {
             if ($the_object->has_the_attribute($the_attribute)) {

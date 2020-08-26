@@ -7,7 +7,12 @@ if (!$session->is_signed_in()) {
 ?>
 
 <?php
-$comments = Comment::find_all();
+
+if(empty($_GET['id'])){
+    redirect("photos.php");
+}
+
+$the_photo_comments = Comment::find_the_comments($_GET['id']);
 ?>
 
 <!-- Navigation -->
@@ -28,30 +33,28 @@ $comments = Comment::find_all();
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    All Comments
+                    All comments for photo ID = <?php echo $_GET['id']; ?>
                 </h1>
 
                 <div class="col-md-12">
                     <table class="table table-hover">
                         <thead>
                         <th>Comment ID</th>
-                        <th>Photo ID</th>
                         <th>Author</th>
                         <th>Body</th>
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($comments as $comment) : ?>
+                            foreach ($the_photo_comments as $comment) : ?>
                             
                             <?php $single_photo = Photo::find_by_id($comment->photo_id) ?>
 
                                     <tr>
                                         <td><?php echo $comment->id; ?></td>
-                                        <td><img class="user_image" src="images/<?php echo $single_photo->filename; ?>"></td>
                                         <td><?php echo $comment->author; ?></td>
                                         <td><?php echo $comment->body; ?>
                                             <div class="action_links">
-                                                <a href="delete_comment.php?dc=<?php echo $comment->id; ?>">Delete</a>
+                                                <a href="delete_comment.php?dc=<?php echo $comment->id; ?>&photo_id=<?php echo $_GET['id']; ?>">Delete</a>
                                                 <a href="edit_comment.php?ec=<?php echo $comment->id; ?>">Edit</a>
                                             </div>
                                         </td>
