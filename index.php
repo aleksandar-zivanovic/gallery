@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 <?php include_once 'admin/includes/config.php'; ?>
 <?php include("includes/header.php"); ?>
 

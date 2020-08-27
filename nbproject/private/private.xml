@@ -5,7 +5,8 @@
         <group>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/photo.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/comment_photo.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/photo.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/delete_comment.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/edit_comment.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/photos.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/comment.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/db_object.php</file>
