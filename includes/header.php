@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+<?php require_once 'admin/includes/init.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Home - Start Bootstrap Template</title>
+    <title>Phptp Gallery</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +26,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    
+    <!-- My CSS displaying photos on the front page -->
+    <link href="css/front-end_styles.css" rel="stylesheet">
+    
+    
 </head>
 
 <body>
@@ -33,6 +39,3 @@
 
     <!-- Navigation -->
 <?php include("navigation.php"); ?>
-
-    <!-- Page Content -->
-    <div class="container">

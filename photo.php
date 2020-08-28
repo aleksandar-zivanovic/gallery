@@ -42,12 +42,12 @@ $comments = Comment::find_the_comments($photo->id);
     <div class="row">
 
         <!-- Blog Post Content Column -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
 
             <!-- Blog Post -->
 
             <!-- Title -->
-            <h1>Blog Post Title</h1>
+            <h1><?php echo $photo->title ?></h1>
 
             <!-- Author -->
             <p class="lead">
@@ -62,13 +62,13 @@ $comments = Comment::find_the_comments($photo->id);
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+            <img class="img-responsive" src="admin/<?php echo $photo->picture_path(); ?>" alt="<?php echo $photo->alternate_text; ?>">
 
             <hr>
 
             <!-- Post Content -->
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
+            <p class="lead"><?php echo $photo->caption ?></p>
+            <p><?php echo $photo->description ?></p>
 
             <hr>
 
@@ -118,9 +118,9 @@ $comments = Comment::find_the_comments($photo->id);
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
+<!--        <div class="col-md-4">
 
-            <!-- Blog Search Well -->
+             Blog Search Well 
             <div class="well">
                 <h4>Blog Search</h4>
                 <div class="input-group">
@@ -130,12 +130,12 @@ $comments = Comment::find_the_comments($photo->id);
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
-                </div>
+                </div>-->
                 <!-- /.input-group -->
-            </div>
+            <!--</div>-->
 
             <!-- Blog Categories Well -->
-            <div class="well">
+<!--            <div class="well">
                 <h4>Blog Categories</h4>
                 <div class="row">
                     <div class="col-lg-6">
@@ -162,15 +162,15 @@ $comments = Comment::find_the_comments($photo->id);
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
                 <!-- /.row -->
-            </div>
+            <!--</div>-->
 
             <!-- Side Widget Well -->
-            <div class="well">
+<!--            <div class="well">
                 <h4>Side Widget Well</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-            </div>
+            </div>-->
 
         </div>
 
