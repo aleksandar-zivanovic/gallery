@@ -96,7 +96,7 @@ $comments = Comment::find_the_comments($photo->id);
             <!-- Comment -->
 
 
-<?php foreach ($comments as $single_comment): ?>
+            <?php foreach ($comments as $single_comment): ?>
 
                 <div class="media">
                     <a class="pull-left" href="#">
@@ -106,11 +106,11 @@ $comments = Comment::find_the_comments($photo->id);
                         <h4 class="media-heading"><?php echo $single_comment->author; ?>
                             <small>August 25, 2014 at 9:30 PM</small>
                         </h4>
-    <?php echo $single_comment->body; ?>
+                        <?php echo $single_comment->body; ?>
                     </div>
                 </div>
 
-                    <?php endforeach; ?>
+            <?php endforeach; ?>
 
 
 
@@ -118,63 +118,62 @@ $comments = Comment::find_the_comments($photo->id);
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
-<!--        <div class="col-md-4">
+        <!--        <div class="col-md-4">
+        
+                     Blog Search Well 
+                    <div class="well">
+                        <h4>Blog Search</h4>
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>-->
+        <!-- /.input-group -->
+        <!--</div>-->
 
-             Blog Search Well 
-            <div class="well">
-                <h4>Blog Search</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>-->
-                <!-- /.input-group -->
-            <!--</div>-->
+        <!-- Blog Categories Well -->
+        <!--            <div class="well">
+                        <h4>Blog Categories</h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>-->
+        <!-- /.row -->
+        <!--</div>-->
 
-            <!-- Blog Categories Well -->
-<!--            <div class="well">
-                <h4>Blog Categories</h4>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>-->
-                <!-- /.row -->
-            <!--</div>-->
+        <!-- Side Widget Well -->
+        <!--            <div class="well">
+                        <h4>Side Widget Well</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    </div>-->
 
-            <!-- Side Widget Well -->
-<!--            <div class="well">
-                <h4>Side Widget Well</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-            </div>-->
+        <!--</div>-->
 
-        </div>
+    </div> <!-- /.row -->
 
-    </div>
-    <!-- /.row -->
-
-<?php include("includes/footer.php"); ?>
+    <?php include("includes/footer.php"); ?>

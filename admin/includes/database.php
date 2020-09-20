@@ -27,7 +27,7 @@ class Database {
                 /* - mysqli_error() - greska u QUERY-ju            */
                 /* - mysqli_connect_error() - greska u KONEKCIJI   */
                 /***************************************************/
-                or die("<i>Query from query() method failed:</i> <pre>" . $this->connection->error) ."</pre>";
+                or die("<i>Query from query() method failed:</i> <pre>" . $this->connection->error ."</pre>");
             return $result;
     }
 
