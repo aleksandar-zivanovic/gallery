@@ -15,6 +15,7 @@ if (!isset($_GET['dc'])) {
 
     if ($comment) {
         $comment->delete();
+        $session->message("Commnent: \"<i>{$comment->body}</i>\" is deleted");
         if (strpos($_SERVER['HTTP_REFERER'], "comment_photo.php") && isset($_GET['photo_id'])) {
             redirect("comment_photo.php?id={$_GET['photo_id']}");
         } else {

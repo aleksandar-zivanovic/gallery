@@ -4,12 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/gallery/admin/includes/photo.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/admin/upload.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/includes/header.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/css/front-end_styles.css</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/js/scripts.js</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/comments.php</file>
             <file>file:/C:/xampp/htdocs/gallery/admin/photos.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/admin/includes/paginate.php</file>
-            <file>file:/C:/xampp/htdocs/gallery/index.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/users.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/includes/db_object.php</file>
+            <file>file:/C:/xampp/htdocs/gallery/admin/includes/photo_library_modal.php</file>
         </group>
     </open-files>
 </project-private>

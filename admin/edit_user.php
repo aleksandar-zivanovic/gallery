@@ -1,4 +1,5 @@
 <?php include_once 'includes/header.php' ?>
+<?php include_once 'includes/photo_library_modal.php'; ?>
 
 <?php
 if (!$session->is_signed_in()) {
@@ -22,10 +23,14 @@ if (isset($_POST['update'])) {
 
         if (empty($_FILES['user_image'])) {
             $user->save();
+            $session->message("User {$user->username} is updated.");
+            redirect("users.php");
         } else {
             $user->set_file($_FILES['user_image']);
             $user->upload_photo();
             $user->save();
+            $session->message("User {$user->username} is updated.");
+            redirect("users.php");
         }
     }
 }
@@ -52,8 +57,8 @@ if (isset($_POST['update'])) {
                     Edit User: <small><?php echo $user->username; ?>
                 </h1>
 
-                <div class="col-md-6">
-                    <img class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
+                <div class="col-md-6 user_image_box">
+                    <a href="" data-toggle="modal" data-target="#photo-library"><img class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt=""></a>
                 </div>
 
 
@@ -87,8 +92,8 @@ if (isset($_POST['update'])) {
                         </div>
 
                         <div class="form-group">
-                            <a href="delete_user.php?du=<?php echo $user->id; ?>" class="btn btn-danger pull-left">Delete User</a>
-                            <input type="submit" name="update" class="btn btn-primary pull-right" value="Update User">
+                            <a id="user-id" href="delete_user.php?du=<?php echo $user->id; ?>" class="btn btn-danger pull-left">Delete User</a>
+                            <input type="submit" name="update" class="btn btn-primary pull-right" value="Update User">                          
                         </div>
 
 

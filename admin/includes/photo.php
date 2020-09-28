@@ -96,6 +96,7 @@ class Photo extends Db_object {
 
     /*     Moja verzija delete_photo() funkcije  - daje poruke o greskama umesto     */
     /*     boolean vrednosti, tako da se zna u kom je korako nastala greska          */
+
 //    public function delete_photo() {
 //        if ($this->delete()) {
 //            $target_path = SITE_ROOT . DS . "admin" . DS . $this->picture_path();
@@ -113,6 +114,20 @@ class Photo extends Db_object {
 //        }
 //    }
     /*     * ********* END of delete_photo() ********** */
+
+
+
+    public static function display_sidebar_data($photo_id) {
+        $photo = Photo::find_by_id($photo_id);
+
+        $output = "<a href='#' class='thumbnail'><img width='100' src='{$photo->picture_path()}' ></a>";
+        $output .= "<p>Filename: {$photo->filename}</p>";
+        $output .= "<p>File type: {$photo->type}</p>";
+        $output .= "<p>File size: " . round($photo->size / 1024, 2) . "kb</p>";
+
+        echo $output;
+    }
+
 }
 
 ?>

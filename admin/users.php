@@ -31,13 +31,9 @@ $users = User::find_all();
                     Users
                 </h1>
                 
+                <?php echo "<div class='alert-success'>{$session->message}</div><br>"; ?>
+                
                 <a href="add_user.php" class="btn btn-primary">Add user</a>
-
-                <?php
-//                echo "<pre>";
-//                print_r($users);
-//                echo "</pre>";
-                ?>
 
                 <div class="col-md-12">
                     <table class="table table-hover">
@@ -55,8 +51,8 @@ $users = User::find_all();
                                     <td><img class="user_image" src="<?php echo $user->image_path_and_placeholder(); ?>"></td>
                                     <td><?php echo $user->username; ?>
                                         <div class="action_links">
-                                            <a href="delete_user.php?du=<?php echo $user->id; ?>">Delete</a>
-                                            <a href="edit_user.php?id=<?php echo $user->id; ?>">Edit</a>
+                                            <a class="delete_link" href="delete_user.php?du=<?php echo $user->id; ?>">Delete</a> 
+                                           <a href="edit_user.php?id=<?php echo $user->id; ?>">Edit</a>
                                         </div>
                                     </td>
                                     <td><?php echo $user->first_name; ?></td>

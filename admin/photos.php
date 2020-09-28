@@ -32,6 +32,8 @@ $photos = Photo::find_all();
                     <!--<small>Subheading</small>-->
                 </h1>
 
+                <?php echo "<div class='alert-success'>{$session->message}</div><br>"; ?>
+
                 <?php
 //                echo "<pre>";
 //                print_r($photos);
@@ -53,7 +55,7 @@ $photos = Photo::find_all();
                                 <tr>
                                     <td><img class="admin-photo-thumbnail" src="<?php echo $photo->picture_path(); ?>">
                                         <div class="action_links">
-                                            <a href="delete_photo.php?id=<?php echo $photo->id; ?>">Delete</a>
+                                            <a class="delete_link" href="delete_photo.php?id=<?php echo $photo->id; ?>">Delete</a>
                                             <a href="edit_photo.php?id=<?php echo $photo->id; ?>">Edit</a>
                                             <a href="../photo.php?id=<?php echo $photo->id; ?>" target="_blank">View</a>
                                         </div>
@@ -65,12 +67,13 @@ $photos = Photo::find_all();
                                     <td>
                                         <?php
                                         $comment_counter = Comment::find_the_comments($photo->id);
-                                        echo "<a href='comment_photo.php?id={$photo->id}'>" . count($comment_counter) . "</a>"; ?>
+                                        echo "<a href='comment_photo.php?id={$photo->id}'>" . count($comment_counter) . "</a>";
+                                        ?>
                                     </td>
-                                    
-                                    
+
+
                                 </tr>
-                            <?php endforeach; ?>
+<?php endforeach; ?>
                         </tbody>
                     </table> <!-- End of table -->
 

@@ -16,6 +16,7 @@ if (!isset($_GET['du'])) {
 
     if ($user) {
         $user->delete_user();
+        $session->message("User {$user->username} with ID {$user_id} is deleted!");
         redirect("users.php");
     } else {
         echo "The user doesn't exist";

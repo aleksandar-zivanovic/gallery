@@ -14,6 +14,10 @@ class User extends Db_object {
     public $upload_directory = "images";
     public $image_placeholder = "https://via.placeholder.com/400x400&text=user_image";
 
+    public function user_image_path() {
+        return $this->upload_directory . DS . $this->user_image;
+    }
+
     public function upload_photo() {
         if (!empty($this->errors)) {
             return false;
@@ -24,7 +28,7 @@ class User extends Db_object {
             return false;
         }
 
-        $target_path = SITE_ROOT . DS . "admin" . DS . $this->upload_directory . DS . $this->user_image;
+        $target_path = SITE_ROOT . DS . "admin" . DS . $this->user_image_path();
 
         if (file_exists($target_path)) {
             $this->errors[] = "The file $this->user_image already exists";
@@ -41,7 +45,7 @@ class User extends Db_object {
     }
 
     public function image_path_and_placeholder() {
-        return empty($this->user_image) ? $this->image_placeholder : $this->upload_directory . DS . $this->user_image;
+        return empty($this->user_image) ? $this->image_placeholder : $this->user_image_path();
     }
 
     public static function verify_user($username, $password) {
@@ -56,15 +60,32 @@ class User extends Db_object {
     }
 
     public function delete_user() {
+        global $database;
         if ($this->delete()) {
-            $target_path = SITE_ROOT . DS . "admin" . DS . $this->upload_directory . DS . $this->user_image;
+            $target_path = SITE_ROOT . DS . "admin" . DS . $this->user_image_path();
             if (file_exists($target_path)) {
-                return unlink($target_path) ? true : false;
+                $sql = "SELECT * FROM photos WHERE filename = '{$this->user_image}'";
+                $result = $database->query($sql);
+                if (mysqli_num_rows($result) < 1) {
+                    unlink($target_path);
+                }
             }
             return true;
         } else {
             return false;
         }
+    }
+
+    public function ajax_save_user_image($user_image, $user_id) {
+        global $database;
+
+        $this->user_image = $user_image;
+        $this->id = $user_id;
+
+        $sql = "UPDATE " . self::$db_table . " SET user_image = '{$this->user_image}' WHERE id = {$this->id}";
+        $update_image = $database->query($sql);
+
+        echo $this->image_path_and_placeholder();
     }
 
 }

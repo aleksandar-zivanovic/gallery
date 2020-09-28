@@ -37,10 +37,10 @@ class Session {
     }
 
     public function logout() {
-        unset($_SESSION['user_id']);
+        session_unset();
+        session_destroy();
         unset($this->user_id);
         unset($_SESSION['count']);
-        unset($this->count);
         $this->signed_in = false;
     }
 
