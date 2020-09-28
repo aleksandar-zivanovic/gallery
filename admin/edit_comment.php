@@ -71,7 +71,7 @@ if (isset($_POST['update'])) {
                         </div>
 
                         <div class="form-group">
-                            <a href="delete_user.php?du=<?php echo $single_comment->id; ?>" class="btn btn-danger pull-left">Delete User</a>
+                            <a href="delete_comment.php?dc=<?php echo $single_comment->id; ?>" class="delete_link btn btn-danger pull-left">Delete Comment</a>
                             <input type="submit" name="update" class="btn btn-primary pull-right" value="Edit Comment">
                         </div>
 

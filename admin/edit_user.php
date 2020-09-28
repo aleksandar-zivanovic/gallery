@@ -92,7 +92,7 @@ if (isset($_POST['update'])) {
                         </div>
 
                         <div class="form-group">
-                            <a id="user-id" href="delete_user.php?du=<?php echo $user->id; ?>" class="btn btn-danger pull-left">Delete User</a>
+                            <a id="user-id" href="delete_user.php?du=<?php echo $user->id; ?>" class="delete_link btn btn-danger pull-left">Delete User</a>
                             <input type="submit" name="update" class="btn btn-primary pull-right" value="Update User">                          
                         </div>
 
