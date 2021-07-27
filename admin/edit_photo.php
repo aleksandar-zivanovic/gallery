@@ -21,6 +21,7 @@ if (!isset($_GET['id'])) {
     }
 
     $photo->save();
+    $session->message("Photo {$photo->title} with ID {$photo->id} is updated.");
 }
 ?>
 
